@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assemble.iml" filepath="$PROJECT_DIR$/.idea/modules/Assemble.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assemble.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assemble.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2100556360/GestureLibrarySample.iml" filepath="$PROJECT_DIR$/.idea/modules/2100556360/GestureLibrarySample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1025085728/GestureLibrarySample.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1025085728/GestureLibrarySample.main.iml" />
+    </modules>
+  </component>
+</project>
