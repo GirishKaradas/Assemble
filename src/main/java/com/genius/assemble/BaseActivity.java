@@ -17,18 +17,66 @@
 package com.genius.assemble;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.glass.ui.GlassGestureDetector;
-
 public abstract class BaseActivity extends AppCompatActivity implements GlassGestureDetector.OnGestureListener {
 
   private View decorView;
   private GlassGestureDetector glassGestureDetector;
+
+
+  @Override
+  public boolean onKeyDown(int keycode, KeyEvent e) {
+    Log.e("Base", ":" + KeyEvent.keyCodeToString(keycode));
+
+    switch (keycode) {
+
+      case KeyEvent.KEYCODE_DPAD_CENTER:
+        onGesture(GlassGestureDetector.Gesture.TAP);
+        return true;
+      case KeyEvent.KEYCODE_DPAD_DOWN:
+        onGesture(GlassGestureDetector.Gesture.SWIPE_DOWN);
+        return true;
+      case KeyEvent.KEYCODE_DPAD_UP:
+        onGesture(GlassGestureDetector.Gesture.SWIPE_UP);
+        return true;
+      case KeyEvent.KEYCODE_DPAD_RIGHT:
+        onGesture(GlassGestureDetector.Gesture.SWIPE_FORWARD);
+
+        return true;
+      case KeyEvent.KEYCODE_DPAD_LEFT:
+
+          onGesture(GlassGestureDetector.Gesture.SWIPE_BACKWARD);
+
+        return true;
+
+      case KeyEvent.KEYCODE_FORWARD_DEL:
+        onGesture(GlassGestureDetector.Gesture.TWO_FINGER_SWIPE_FORWARD);
+        return true;
+      case KeyEvent.KEYCODE_DEL:
+        onGesture(GlassGestureDetector.Gesture.TWO_FINGER_SWIPE_BACKWARD);
+        return true;
+      case KeyEvent.KEYCODE_VOLUME_UP:
+        onGesture(GlassGestureDetector.Gesture.TWO_FINGER_SWIPE_UP);
+        return true;
+      case KeyEvent.KEYCODE_VOLUME_DOWN:
+        onGesture(GlassGestureDetector.Gesture.TWO_FINGER_SWIPE_DOWN);
+        return true;
+      case KeyEvent.KEYCODE_VOLUME_MUTE:
+        // Do nothing
+        return true;
+      default:
+        return super.onKeyUp(keycode, e);
+    }
+
+  }
+
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {

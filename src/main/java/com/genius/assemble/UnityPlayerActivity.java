@@ -1,17 +1,14 @@
 package com.genius.assemble;
 
-import com.example.glass.ui.GlassGestureDetector;
 import com.unity3d.player.*;
-import android.app.Activity;
+
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 public class UnityPlayerActivity extends BaseActivity
 {
@@ -103,6 +100,7 @@ public class UnityPlayerActivity extends BaseActivity
             mUnityPlayer.lowMemory();
         }
     }
+/*
 
     // This ensures the layout will be correct.
     @Override public void onConfigurationChanged(Configuration newConfig)
@@ -110,6 +108,7 @@ public class UnityPlayerActivity extends BaseActivity
         super.onConfigurationChanged(newConfig);
         mUnityPlayer.configurationChanged(newConfig);
     }
+*/
 
     // Notify Unity of the focus change.
     @Override public void onWindowFocusChanged(boolean hasFocus)
@@ -128,10 +127,10 @@ public class UnityPlayerActivity extends BaseActivity
     }
 
     // Pass any events not handled by (unfocused) views straight to UnityPlayer
-    @Override public boolean onKeyUp(int keyCode, KeyEvent event)     { return mUnityPlayer.injectEvent(event); }
-    @Override public boolean onKeyDown(int keyCode, KeyEvent event)   { return mUnityPlayer.injectEvent(event); }
-    @Override public boolean onTouchEvent(MotionEvent event)          { return mUnityPlayer.injectEvent(event); }
-    /*API12*/ public boolean onGenericMotionEvent(MotionEvent event)  { return mUnityPlayer.injectEvent(event); }
+ //   @Override public boolean onKeyUp(int keyCode, KeyEvent event)     { return mUnityPlayer.injectEvent(event); }
+   // @Override public boolean onKeyDown(int keyCode, KeyEvent event)   { return mUnityPlayer.injectEvent(event); }
+//    @Override public boolean onTouchEvent(MotionEvent event)          { return mUnityPlayer.injectEvent(event); }
+  //  /*API12*/ public boolean onGenericMotionEvent(MotionEvent event)  { return mUnityPlayer.injectEvent(event); }
 
     @Override
     public boolean onGesture(GlassGestureDetector.Gesture gesture) {
